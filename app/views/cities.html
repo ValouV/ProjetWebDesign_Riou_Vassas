@@ -1,5 +1,17 @@
-<ul>
-<li ng-repeat="city in list">
-        {{ city.fields.city }}
-</li>
-</ul>
+<table class="table">
+    <thead>
+      <tr>
+        <th>City</th>
+        <th>Country</th>
+        <th>Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="city in list">
+        <td>{{ city.fields.accentcity }}</td>
+        <td>{{ city.fields.country }}</td>
+        <td>{{ city.fields.population }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
