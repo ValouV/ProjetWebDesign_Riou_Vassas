@@ -29,7 +29,18 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/cities', {
+        templateUrl: 'views/cities.html',
+        controller: 'CitiesCtrl',
+        controllerAs: 'cities'
+      })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .config(['$sceDelegateProvider', function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    'self',
+    'https://public.opendatasoft.com/**',
+  ]);
+}]);
