@@ -17,4 +17,14 @@ angular.module('projetWebDesignApp')
         $scope.list = data.data.records;
       });
 
+  }).filter('milions', function() {
+    return function(input) {
+      if (input!==undefined){
+        var nbr = Math.abs(input);
+      if (nbr >= Math.pow(10, 6)) {
+        input = (input / Math.pow(10, 6)).toFixed(1)+' M';
+      }
+    }
+      return input;
+    };
   });

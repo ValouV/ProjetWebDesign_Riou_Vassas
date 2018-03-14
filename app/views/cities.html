@@ -10,7 +10,7 @@
       <tr ng-repeat="city in list">
         <td>{{ city.fields.accentcity }}</td>
         <td>{{ city.fields.country }}</td>
-        <td>{{ city.fields.population }}</td>
+        <td>{{ city.fields.population | milions }}</td>
       </tr>
     </tbody>
   </table>
