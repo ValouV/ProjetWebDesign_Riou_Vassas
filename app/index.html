@@ -8,12 +8,14 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.css' />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body ng-app="projetWebDesignApp">
 
@@ -38,7 +40,6 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#!/">Home</a></li>
               <li><a ng-href="#!/about">About</a></li>
-              <li><a ng-href="#!/">Contact</a></li>
               <li><a ng-href="#!/cities">Cities List</a></li>
             </ul>
           </div>
