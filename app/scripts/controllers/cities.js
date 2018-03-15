@@ -12,12 +12,23 @@ angular.module('projetWebDesignApp')
     var url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&sort=population&facet=country';
 
 
-    $http.jsonp(url).
+      $scope.currentPage = 0;
+      $scope.pageSize = 20;
+
+    var url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&rows=10&start=&sort=population&facet=country';
+
+
+      $scope.$watch('currentPage + pageSize', function(){
+        url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&rows='+$scope.pageSize+'&start='+$scope.currentPage+'&sort=population&facet=country';
+            $http.jsonp(url).
       then(function(data) {
         $scope.list = data.data.records;
       });
 
+      });
+
   }).filter('milions', function() {
+
     return function(input) {
       if (input!==undefined){
         var nbr = Math.abs(input);
@@ -27,4 +38,5 @@ angular.module('projetWebDesignApp')
     }
       return input;
     };
+
   });

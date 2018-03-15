@@ -1,3 +1,4 @@
+
 <table class="table">
     <thead>
       <tr>
@@ -15,3 +16,12 @@
     </tbody>
   </table>
 </div>
+
+<!--
+<pagination total-items="totalPages" ng-model="currentPage" ng-change="pageChanged()" items-per-page="20" max-size="5" boundary-links="true"></pagination>
+-->
+
+      <div class="container"> Page {{(currentPage/pageSize)+1}}
+        <button class="btn btn-default" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-pageSize">Previous</button>
+        <button class="btn btn-default" ng-disabled="currentPage >= 330000" ng-click="currentPage=currentPage+pageSize">Next</button>
+      </div>
