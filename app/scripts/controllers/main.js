@@ -10,7 +10,7 @@
 angular.module('projetWebDesignApp')
 .controller('MainCtrl', function ($http) {
 
-  var url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&sort=population&facet=country';
+  var url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&sort=population&row=10';
 
   //create map
   mapboxgl.accessToken = 'pk.eyJ1IjoidmFsb3V2IiwiYSI6ImNqZXNhaGV5aTVkeTkycXBlMGV3bGNycXYifQ.F57k7NEQSKGD3Gc_rAunCQ';
