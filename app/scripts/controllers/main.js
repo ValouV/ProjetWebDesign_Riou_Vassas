@@ -10,7 +10,7 @@
 angular.module('projetWebDesignApp')
 .controller('MainCtrl', function ($http) {
 
-  var url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&sort=population&row=10';
+  var url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&sort=population&rows=100';
 
   //create map
   mapboxgl.accessToken = 'pk.eyJ1IjoidmFsb3V2IiwiYSI6ImNqZXNhaGV5aTVkeTkycXBlMGV3bGNycXYifQ.F57k7NEQSKGD3Gc_rAunCQ';
@@ -32,17 +32,21 @@ angular.module('projetWebDesignApp')
         },
         'paint': {
           'circle-radius': {
-            'base': 1.75,
-            'stops': [[1, 20], [10, 180]]
+            'base': {},
+            'stops': {}
           },
           'circle-color': '#fbb03b'
         }
       };
       //then for each point in json
-      angular.forEach(data.data.records, function(value, key){
+      angular.forEach(data.data.records, function(value){
         //creating a point
         geoPoints.source.data = value.geometry;
-        geoPoints.id = value.recordid,
+        geoPoints.id = value.recordid;
+        console.log(value.fields.population/1000000);
+        geoPoints.paint['circle-radius'].base = ((value.fields.population)/1000000);
+        geoPoints.paint['circle-radius'].stops =[[1, (value.fields.population)/1000000], [12, (value.fields.population)/1000000*10]];
+
         map.addLayer(
           geoPoints
         );
