@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'isoCountryFilter'
+    'isoCountryFilter',
+    'ngMaterial'
   ])
   .config(function ($routeProvider) {
     $routeProvider

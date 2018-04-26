@@ -8,10 +8,13 @@
  * Controller of the projetWebDesignApp
  */
 angular.module('projetWebDesignApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AboutCtrl', function ($scope) {
+
+      $scope.imagePath = 'images/angular.png';
+
+  }).config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
+    $mdThemingProvider.theme('dark-orange').backgroundPalette('orange').dark();
+    $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
+    $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
   });

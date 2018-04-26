@@ -1,1 +1,61 @@
-<p>This is the about view.</p>
+<div ng-controller="AboutCtrl" ng-cloak>
+  <md-content class="md-padding" layout-xs="column" layout="row">
+
+    <div flex-xs flex-gt-xs="50" layout="column">
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">The Project</span>
+            <span class="md-subhead">This project's goal is to build an angular web application. The main focus points are :
+              <li>Angular JS</li>
+              <li>Responsivness</li>
+              <li>Design</li>
+            </span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button href="https://github.com/ValouV/ProjetWebDesign_Riou_Vassas">See project repo on git hub</md-button>
+        </md-card-actions>
+      </md-card>
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Homepage</span>
+            <span class="md-subhead">The homepage is a map with yellow dots. Each dot represents one of the top 100 city with the most population.</span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+
+    </div>
+
+    <div flex-xs flex-gt-xs="50" layout="column">
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Angular JS</span>
+            <span class="md-subhead">AngularJS (commonly referred to as "Angular.js" or "AngularJS 1.X") is a JavaScript-based open-source front-end web application framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications.</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button href="https://en.wikipedia.org/wiki/AngularJS">Learn More</md-button>
+        </md-card-actions>
+      </md-card>
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Material Design</span>
+            <span class="md-subhead">Material Design is a design language developed in 2014 by Google. Expanding upon the "card" motifs that debuted in Google Now, Material Design makes more liberal use of grid-based layouts, responsive animations and transitions, padding, and depth effects such as lighting and shadows.</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button href="https://en.wikipedia.org/wiki/Material_Design">Learn more</md-button>
+        </md-card-actions>
+      </md-card>
+
+    </div>
+  </md-content>
+</div>
