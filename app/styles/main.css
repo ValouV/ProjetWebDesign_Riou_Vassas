@@ -19,8 +19,9 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  /*border-bottom: 1px solid #e5e5e5;*/
   margin-bottom: 10px;
+  z-index:10;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -71,6 +72,7 @@ body {
   .footer {
     padding-left: 0;
     padding-right: 0;
+    z-index:15;
   }
   /* Space out the masthead */
   .header {
