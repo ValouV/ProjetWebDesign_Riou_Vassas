@@ -1,39 +1,25 @@
-
+<!--Table-->
 <table class="striped">
-    <thead>
-      <tr>
-        <th>City</th>
-        <th>Country</th>
-        <th>Population  <button class="btn btn-flat" ng-click="ordrecroissant=!ordrecroissant"> ▲▼ </button></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="city in list">
-        <td>{{ city.fields.accentcity }}</td>
-        <td>{{ city.fields.country | uppercase | isoCountryFromAbbreviation }}</td>
-        <td>{{ city.fields.population | milions }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Country</th>
+      <th>Population  <button class="btn btn-flat" ng-click="ordrecroissant=!ordrecroissant"> ▲▼ </button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="city in list">
+      <td>{{ city.fields.accentcity }}</td>
+      <td>{{ city.fields.country | uppercase | isoCountryFromAbbreviation }}</td>
+      <td>{{ city.fields.population | milions }}</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
-<!--
-<div >
-    <button ng-click="ordrecroissant=!ordrecroissant"> Trier Population ordre inverse </button>
+<!--Pagination-->
+
+<div class="container"> Page {{(currentPage/pageSize)+1}}
+  <button class="btn btn-default" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-pageSize">Previous</button>
+  <button class="btn btn-default" ng-disabled="currentPage >= 330000" ng-click="currentPage=currentPage+pageSize">Next</button>
 </div>
-
-
-<pagination total-items="totalPages" ng-model="currentPage" ng-change="pageChanged()" items-per-page="20" max-size="5" boundary-links="true"></pagination>
--->
-
-      <div class="container"> Page {{(currentPage/pageSize)+1}}
-        <button class="btn btn-default" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-pageSize">Previous</button>
-        <button class="btn btn-default" ng-disabled="currentPage >= 330000" ng-click="currentPage=currentPage+pageSize">Next</button>
-      </div>
-
-<!--
-    <div class="container"> <p>  Page {{(currentPage/pageSize)+1}} </p>
-    <button class="btn btn-default"  ng-click="currentPage=currentPage-pageSize">Previous</button>
-    <button class="btn btn-default" ng-disabled="currentPage >= 330000" ng-click="currentPage=currentPage+pageSize">Next</button>
-    </div>
-    -->

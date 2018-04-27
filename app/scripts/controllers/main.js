@@ -10,6 +10,7 @@
 angular.module('projetWebDesignApp')
 .controller('MainCtrl', function ($http) {
 
+  //url for finding 100 cities with the most population
   var url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&sort=population&rows=100';
 
   //create map
@@ -47,6 +48,7 @@ angular.module('projetWebDesignApp')
         geoPoints.paint['circle-radius'].base = ((value.fields.population)/1000000);
         geoPoints.paint['circle-radius'].stops =[[1, (value.fields.population)/1000000], [12, (value.fields.population)/1000000*10]];
 
+        //finally add all the points
         map.addLayer(
           geoPoints
         );

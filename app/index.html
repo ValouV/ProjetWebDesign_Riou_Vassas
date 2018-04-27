@@ -1,88 +1,87 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!--<link rel="stylesheet" href="styles/main.css">-->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.css' />
-    <link rel='stylesheet' href='bower_components/angular-material/angular-material.css' />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="styles/materialize.css"  media="screen,projection"/>
-    <!-- endbuild -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet'/>
-  </head>
-  <body ng-app="projetWebDesignApp">
 
-
-<nav>
-  <div class="nav-wrapper">
-    <a href="/" class="brand-logo">CityPop</a>
-    <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a ng-href="#!/about">About</a></li>
-      <li><a ng-href="#!/cities">Cities List</a></li>
-    </ul>
-  </div>
-</nav>
-
-<ul class="sidenav" id="mobile-demo">
-  <li><a ng-href="/">Home</a></li>
-  <li><a ng-href="#!/about">About</a></li>
-  <li><a ng-href="#!/cities">Cities List</a></li>
-</ul>
+<head>
+  <meta charset="utf-8">
+  <title>CityPop</title>
+  <meta name="description" content="">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!--<link rel="stylesheet" href="styles/main.css">-->
+  <!-- Css for about page-->
+  <link rel='stylesheet' href='bower_components/angular-material/angular-material.css' />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="styles/materialize.css"  media="screen,projection"/>
+  <!-- endbuild -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!--Map Box -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet'/>
+</head>
 
 
 
-    <div ng-view=""></div>
+<body ng-app="projetWebDesignApp">
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-iso-country-filter/dist/isoCountryFilter.min.js"></script>
-    <script src="bower_components/ev-emitter/ev-emitter.js"></script>
-    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<!--Header-->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!/" class="brand-logo">CityPop</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a ng-href="#!/about">About</a></li>
+        <li><a ng-href="#!/cities">Cities List</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="js/materialize.js"></script>
-    <script src="js/masonry.pkgd.js"></script>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a ng-href="#!/about">About</a></li>
+    <li><a ng-href="#!/cities">Cities List</a></li>
+  </ul>
 
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/cities.js"></script>
-        <!-- endbuild -->
 
-        <script>
-        $(document).ready(function(){
-          $('.sidenav').sidenav();
-        });
-        </script>
+  <div ng-view=""></div>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-iso-country-filter/dist/isoCountryFilter.min.js"></script>
+  <script src="bower_components/ev-emitter/ev-emitter.js"></script>
+  <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!--Materialize css-->
+  <script type="text/javascript" src="js/materialize.js"></script>
+
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/controllers/cities.js"></script>
+  <!-- endbuild -->
+
+  <!-- Script for header -->
+  <script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  </script>
 
 </body>
 </html>
