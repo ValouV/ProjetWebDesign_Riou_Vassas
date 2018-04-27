@@ -24,44 +24,25 @@
   </head>
   <body ng-app="projetWebDesignApp">
 
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">World Cities Population</a>
-        <ul id="nav-mobile" class="right hide-on-down">
-          <li><a ng-href="#!/about">About</a></li>
-          <li><a ng-href="#!/cities">Cities List</a></li>
-        </ul>
-      </div>
-    </nav>
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">CityPop</a>
+    <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a ng-href="#!/about">About</a></li>
+      <li><a ng-href="#!/cities">Cities List</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a ng-href="/">Home</a></li>
+  <li><a ng-href="#!/about">About</a></li>
+  <li><a ng-href="#!/cities">Cities List</a></li>
+</ul>
 
 
-    <!-- Add your site or application content here -->
-    <!--<div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">World Cities Population</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#!/">Home</a></li>
-              <li><a ng-href="#!/about">About</a></li>
-              <li><a ng-href="#!/cities">Cities List</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>-->
 
     <div ng-view=""></div>
 
@@ -96,6 +77,12 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/cities.js"></script>
         <!-- endbuild -->
+
+        <script>
+        $(document).ready(function(){
+          $('.sidenav').sidenav();
+        });
+        </script>
 
 </body>
 </html>
