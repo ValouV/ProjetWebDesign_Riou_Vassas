@@ -12,12 +12,15 @@ angular.module('projetWebDesignApp')
 
       $scope.currentPage = 0;
       $scope.pageSize = 20;
+      $scope.ordrecroissant=true;
 
     var url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&rows=10&start=&sort=population';
 
 
-      $scope.$watch('currentPage + pageSize', function(){
-        url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&rows='+$scope.pageSize+'&start='+$scope.currentPage+'&sort=population';
+      $scope.$watch('currentPage + pageSize + ordrecroissant', function(){
+        if ($scope.ordrecroissant) {url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&rows='+$scope.pageSize+'&start='+$scope.currentPage+'&sort=population'};
+        //url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&rows='+$scope.pageSize+'&start='+$scope.currentPage+'&sort=population';
+        if (!$scope.ordrecroissant) {url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop&rows='+$scope.pageSize+'&start='+$scope.currentPage+'&sort=-population'};  
             $http.jsonp(url).
       then(function(data) {
         $scope.list = data.data.records;
